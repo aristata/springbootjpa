@@ -38,6 +38,9 @@ dependencies {
     testImplementation("org.junit.vintage:junit-vintage-engine") {
         exclude(group = "org.hamcrest", module = "hamcrest-core")
     }
+
+    // p6spy
+    implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.2")
 }
 
 tasks.withType<Test> {
