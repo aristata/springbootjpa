@@ -2,6 +2,7 @@ package kr.co.aristatait.springbootjpa1;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import kr.co.aristatait.springbootjpa1.domain.Member;
 import org.springframework.stereotype.Repository;
 
 @Repository
