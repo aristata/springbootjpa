@@ -25,6 +25,7 @@ public class Item {
 
     private int stockQuantity;
 
+    // 예제 샘플로 만들었지만, 실무에서는 거의 사용 안함
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 
