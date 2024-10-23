@@ -1,18 +1,20 @@
 package kr.co.aristatait.springbootjpa1.repository;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import kr.co.aristatait.springbootjpa1.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
     // 스프링에서 알아서 JPA 의 em 을 주입해준다
-    @PersistenceContext
-    private EntityManager em;
+//    @PersistenceContext
+//    private EntityManager em;
+    private final EntityManager em;
 
     public void save(Member member) {
         em.persist(member);
