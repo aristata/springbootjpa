@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import kr.co.aristatait.springbootjpa1.domain.Category;
 import kr.co.aristatait.springbootjpa1.exception.NotEnoughStockException;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
 public class Item {
