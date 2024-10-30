@@ -6,11 +6,13 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 @Table(name = "order_item")
 public class OrderItem {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "order_item_id")
     private Long id;
 
@@ -25,4 +27,32 @@ public class OrderItem {
     private int orderPrice;
 
     private int count;
+
+    // 생성 메서드 =====================================================================================================
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
+        OrderItem orderItem = new OrderItem();
+        orderItem.setItem(item);
+        orderItem.setOrderPrice(orderPrice);
+        orderItem.setCount(count);
+
+        item.removeStock(count);
+        return orderItem;
+    }
+
+    // 비즈니스 로직 ===================================================================================================
+
+    /**
+     * 주문 취소
+     */
+    public void cancel() {
+        // 재고 수량을 원복한다
+        getItem().addStock(count);
+    }
+
+    /**
+     * 총 금액 조회
+     */
+    public int getTotalPrice() {
+        return getOrderPrice() * getCount();
+    }
 }
