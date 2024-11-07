@@ -57,6 +57,6 @@ class MemberServiceTest {
 //        }
 
         //then
-        Assertions.assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        Assertions.assertThrows(IllegalStateException.class, () -> memberService.join(member2), "중복된 멤버를 등록할 수 없습니다.");
     }
 }
