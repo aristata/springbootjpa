@@ -34,7 +34,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    //JUnit4 추가
+    // JUnit4 추가
     testImplementation("org.junit.vintage:junit-vintage-engine") {
         exclude(group = "org.hamcrest", module = "hamcrest-core")
     }
@@ -47,15 +47,6 @@ dependencies {
     annotationProcessor("com.querydsl:querydsl-apt:5.0.0:jakarta")
     annotationProcessor("jakarta.annotation:jakarta.annotation-api")
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")
-}
-
-// QueryDSL
-sourceSets {
-    main {
-        java {
-            srcDirs("$projectDir/src/main/java", "$projectDir/build/generated")
-        }
-    }
 }
 
 tasks.withType<Test> {
