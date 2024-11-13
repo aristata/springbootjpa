@@ -1,4 +1,4 @@
-package kr.co.aristatait.springbootjpa1.controller;
+package kr.co.aristatait.springbootjpa1.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;

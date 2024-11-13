@@ -3,6 +3,7 @@ package kr.co.aristatait.springbootjpa1.controller;
 import jakarta.validation.Valid;
 import kr.co.aristatait.springbootjpa1.domain.Address;
 import kr.co.aristatait.springbootjpa1.domain.Member;
+import kr.co.aristatait.springbootjpa1.dto.MemberForm;
 import kr.co.aristatait.springbootjpa1.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
