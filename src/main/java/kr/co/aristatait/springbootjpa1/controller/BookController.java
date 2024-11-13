@@ -1,6 +1,7 @@
 package kr.co.aristatait.springbootjpa1.controller;
 
 import kr.co.aristatait.springbootjpa1.domain.item.Book;
+import kr.co.aristatait.springbootjpa1.domain.item.Item;
 import kr.co.aristatait.springbootjpa1.dto.BookForm;
 import kr.co.aristatait.springbootjpa1.service.ItemService;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -32,5 +35,12 @@ public class BookController {
 
         itemService.saveItem(book);
         return "redirect:/";
+    }
+
+    @GetMapping("/items")
+    public String list(Model model) {
+        List<Item> items = itemService.findItems();
+        model.addAttribute("items", items);
+        return "items/itemList";
     }
 }
