@@ -5,12 +5,15 @@ import kr.co.aristatait.springbootjpa1.domain.Member;
 import kr.co.aristatait.springbootjpa1.domain.Order;
 import kr.co.aristatait.springbootjpa1.domain.OrderItem;
 import kr.co.aristatait.springbootjpa1.domain.item.Item;
+import kr.co.aristatait.springbootjpa1.dto.OrderSearch;
 import kr.co.aristatait.springbootjpa1.repository.ItemRepository;
 import kr.co.aristatait.springbootjpa1.repository.MemberRepository;
 import kr.co.aristatait.springbootjpa1.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
@@ -67,7 +70,7 @@ public class OrderService {
     /**
      * 검색
      */
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch)
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
+    }
 }

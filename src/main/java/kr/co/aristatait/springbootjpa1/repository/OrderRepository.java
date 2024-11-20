@@ -7,6 +7,7 @@ import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.*;
 import kr.co.aristatait.springbootjpa1.domain.Order;
 import kr.co.aristatait.springbootjpa1.domain.*;
+import kr.co.aristatait.springbootjpa1.dto.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
@@ -111,8 +112,8 @@ public class OrderRepository {
      * => QueryDsl 을 사용
      * 주문 목록 조회
      * - 필터 포함
-     *   - 주문자 명
-     *   - 주문 상태
+     * - 주문자 명
+     * - 주문 상태
      */
     public List<Order> findAll(OrderSearch orderSearch) {
 
